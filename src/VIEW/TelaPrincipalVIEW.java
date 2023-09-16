@@ -40,7 +40,7 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        tituloTXT = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
 
         jButton1.setText("jButton1");
@@ -84,7 +84,7 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
         });
 
         jButton9.setBackground(new java.awt.Color(100, 50, 150));
-        jButton9.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton9.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton9.setText("Perfil");
         jButton9.setBorder(null);
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +103,8 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
         });
 
         jButton11.setBackground(new java.awt.Color(100, 50, 150));
-        jButton11.setText("jButton1");
+        jButton11.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton11.setText("Saldo");
         jButton11.setBorder(null);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -149,23 +150,23 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(100, 50, 150));
 
-        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Tela Principal");
+        tituloTXT.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        tituloTXT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tituloTXT.setText("Tela Principal");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(tituloTXT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jLabel2)
+                .addComponent(tituloTXT)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -229,6 +230,7 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
         if(cpf.length() == 11){
             mainPanel.add(objPanel);
             objPanel.setVisible(true);
+            System.out.println("Mudança");
         }else if(cnpj.length() == 14){
             mainPanel.add(objPanelJ);
             objPanelJ.setVisible(true);
@@ -236,7 +238,7 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "caiu no else");
         }
     }//GEN-LAST:event_jButton9ActionPerformed
-
+    
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         TelaLoginVIEW telaLogin = new TelaLoginVIEW();
         telaLogin.setVisible(true);
@@ -287,9 +289,9 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel mainPanel;
+    private javax.swing.JLabel tituloTXT;
     // End of variables declaration//GEN-END:variables
 }
