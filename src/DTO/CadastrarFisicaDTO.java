@@ -2,6 +2,7 @@ package DTO;
 
 
 public class CadastrarFisicaDTO {
+
     private String nome;
     private String sobrenome;
     private String endereco;
@@ -10,6 +11,7 @@ public class CadastrarFisicaDTO {
     private String dataNascimento;
     private String cpf;
     private String senha;
+    private static int conta;
     
     
     public String getNome(){
@@ -78,5 +80,13 @@ public class CadastrarFisicaDTO {
 
     public boolean next() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    public int getConta() {
+        return conta;
+    }
+
+    public void setConta(int conta) {
+        this.conta = conta;
     }
 }

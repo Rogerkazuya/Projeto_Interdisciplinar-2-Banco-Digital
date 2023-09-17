@@ -16,7 +16,6 @@ public class PerfilVIEW extends javax.swing.JInternalFrame {
      */
     public PerfilVIEW() {
         initComponents();
-        verificacpf();
     }
     
     /**
