@@ -4,10 +4,13 @@
  */
 package VIEW;
 
-import DTO.ClienteFisicaDTO;
-import DTO.ClienteJuridicaDTO;
-import javax.swing.JOptionPane;
 
+import DTO.PessoaFisicaDTO;
+import DTO.PessoaJuridicaDTO;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import javax.swing.JDesktopPane;
 /**
  *
  * @author thiag
@@ -19,6 +22,9 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
      */
     public TelaPrincipalVIEW() {
         initComponents();
+        VoidForm vf = new VoidForm();
+        mainPanel.add(vf);
+        vf.setVisible(true);
     }
 
     /**
@@ -36,9 +42,10 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        btnPerfil = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
+        btnDeposito = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         tituloTXT = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
@@ -51,7 +58,7 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(100, 50, 150));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setRequestFocusEnabled(false);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -74,8 +81,10 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(100, 50, 150));
-        jButton8.setText("jButton1");
+        jButton8.setBackground(new java.awt.Color(153, 153, 153));
+        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(0, 0, 0));
+        jButton8.setText("Comprovantes");
         jButton8.setBorder(null);
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,18 +92,21 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
             }
         });
 
-        jButton9.setBackground(new java.awt.Color(100, 50, 150));
-        jButton9.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton9.setText("Perfil");
-        jButton9.setBorder(null);
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        btnPerfil.setBackground(new java.awt.Color(153, 153, 153));
+        btnPerfil.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnPerfil.setForeground(new java.awt.Color(0, 0, 0));
+        btnPerfil.setText("Perfil");
+        btnPerfil.setBorder(null);
+        btnPerfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                btnPerfilActionPerformed(evt);
             }
         });
 
-        jButton10.setBackground(new java.awt.Color(100, 50, 150));
-        jButton10.setText("jButton1");
+        jButton10.setBackground(new java.awt.Color(153, 153, 153));
+        jButton10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(0, 0, 0));
+        jButton10.setText("Transfência");
         jButton10.setBorder(null);
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,32 +114,48 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
             }
         });
 
-        jButton11.setBackground(new java.awt.Color(100, 50, 150));
+        jButton11.setBackground(new java.awt.Color(153, 153, 153));
         jButton11.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(0, 0, 0));
         jButton11.setText("Saldo");
         jButton11.setBorder(null);
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        btnDeposito.setBackground(new java.awt.Color(153, 153, 153));
+        btnDeposito.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnDeposito.setForeground(new java.awt.Color(0, 0, 0));
+        btnDeposito.setText("Depósito");
+        btnDeposito.setBorder(null);
+        btnDeposito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDepositoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
-                        .addContainerGap())))
             .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnPerfil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnDeposito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,20 +165,23 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton7)
                 .addGap(18, 18, 18)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnDeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(100, 50, 150));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
         tituloTXT.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        tituloTXT.setForeground(new java.awt.Color(0, 0, 0));
         tituloTXT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloTXT.setText("Tela Principal");
 
@@ -158,14 +189,12 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(tituloTXT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(tituloTXT, javax.swing.GroupLayout.DEFAULT_SIZE, 679, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(42, 42, 42)
                 .addComponent(tituloTXT)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
@@ -174,11 +203,11 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 489, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 434, Short.MAX_VALUE)
+            .addGap(0, 471, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -190,17 +219,15 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -213,37 +240,130 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
+       PessoaFisicaDTO pessoaDto = new PessoaFisicaDTO();
+       Comprovantes objComprovantes = new Comprovantes();
+       objComprovantes.listarValoresTabelaPIX(pessoaDto.getCpf());
+       mainPanel.add(objComprovantes);
+       mainPanel.remove(0);
+       objComprovantes.setVisible(true);
+       tituloTXT.setText("Tranferências");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+       TransferenciaVIEW objTrans = new TransferenciaVIEW();       
+       mainPanel.add(objTrans);
+       mainPanel.remove(0);
+       objTrans.setVisible(true);
+       tituloTXT.setText("Tranferências");
+       
+      
+     
     }//GEN-LAST:event_jButton10ActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void btnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerfilActionPerformed
+        // Está instanciando os Jframes PerfilVIEW e PerfilVIEWJuridica
         PerfilVIEW objPanel = new PerfilVIEW();
         PerfilVIEWJuridica objPanelJ = new PerfilVIEWJuridica();
-        ClienteFisicaDTO objC = new ClienteFisicaDTO();
-        ClienteJuridicaDTO objF = new ClienteJuridicaDTO();
-        String cpf = objC.getCpf_usuario();
-        String cnpj = objF.getCnpj();
         
+        // Está instanciando as clases PerfilFisicaDTO e PessoaJuridicaDTO
+        PessoaFisicaDTO cfdto= new PessoaFisicaDTO();
+        PessoaJuridicaDTO cjdto = new PessoaJuridicaDTO();
+        
+        // cpf e cnpj recebendo valores dos objetos DTO
+        String cpf = cfdto.getCpf();
+        String cnpj = cjdto.getCnpj();
+       
+        
+       
+        /*
+        Verifica se o comprimento digitado foi em formato de cpf que é igual a 11,
+        assim o sistema reconhecendo que é uma pessoa fisica
+        */
         if(cpf.length() == 11){
-            mainPanel.add(objPanel);
+            if(btnPerfil.isSelected()){
             objPanel.setVisible(true);
-            System.out.println("Mudança");
+            }
+           mainPanel.add(objPanel);
+           mainPanel.remove(0);
+           tituloTXT.setText("Perfil do usuario");
+           objPanel.listarValores();
+         /*
+         Verifica se o comprimento digitado foi em formato de cnpj  que é igual a 14,
+           assim o sistema reconhecendo que é uma pessoa juridica
+         */
         }else if(cnpj.length() == 14){
             mainPanel.add(objPanelJ);
+           mainPanel.remove(0);
             objPanelJ.setVisible(true);
+            objPanelJ.listarValores();
+            
+        // Caso algo der errado, cai aqui
         }else{
             JOptionPane.showMessageDialog(null, "caiu no else");
         }
-    }//GEN-LAST:event_jButton9ActionPerformed
-    
+        
+      
+        
+   
+    }//GEN-LAST:event_btnPerfilActionPerformed
+
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         TelaLoginVIEW telaLogin = new TelaLoginVIEW();
         telaLogin.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void btnDepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositoActionPerformed
+        //Instanciando os Jframes DepositoVIEW e PerfilVIEW
+        DepositoVIEW objD = new DepositoVIEW();
+        PerfilVIEW objP =  new PerfilVIEW();
+        PerfilVIEWJuridica objJ = new PerfilVIEWJuridica();
+       
+      
+        // Instanciando as classes PessoaFisicaDTO e PessoaJuridcaDTO
+        PessoaFisicaDTO objfdto = new PessoaFisicaDTO();
+        PessoaJuridicaDTO objjdto = new PessoaJuridicaDTO();
+        
+        // As variáveis cpf, cnpj e saldo estão recebendo valores dos objetos DTO
+        String cpf =  objfdto.getCpf();
+        String cnpj = objjdto.getCnpj();
+        String saldo =  objfdto.getSaldo();
+        
+        /*
+        Irá verificar se o comprimento digitado foi em formato de cpf que é igual a 11,
+        assim o sistema reconhecendo que é uma pessoa fisica
+        */
+        if(cpf.length() == 11){
+            if(btnDeposito.isSelected()){
+                objP.setVisible(false);
+            }
+            mainPanel.revalidate();
+            mainPanel.repaint();
+            
+            if(objP.isVisible()){
+                objP.dispose();
+            }
+           mainPanel.add(objD);
+           mainPanel.remove(0);
+           tituloTXT.setText("Depósito");
+           objD.setVisible(true);
+           
+           /*
+           Irá verificar se o comprimento digitado foi em formato de cnpj que é igual a 14,
+           assim o sistema reconhecendo que é uma pessoa juridica
+           */
+           }else if(cnpj.length() == 14){
+            mainPanel.add(objJ);
+            mainPanel.remove(0);
+            objJ.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "caiu no else");
+        }
+    }//GEN-LAST:event_btnDepositoActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,13 +401,14 @@ public class TelaPrincipalVIEW extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDeposito;
+    private javax.swing.JButton btnPerfil;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

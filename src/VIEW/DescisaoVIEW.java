@@ -39,26 +39,26 @@ public class DescisaoVIEW extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(240, 240, 240));
 
-        jPanel2.setBackground(new java.awt.Color(100, 50, 150));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("BEM-VINDO");
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("FINUP!");
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("ao Banco");
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
         jLabel18.setText("\"Segurança e confiança, seu dinheiro, ");
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
         jLabel19.setText("merece o melhor\"");
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
@@ -112,9 +112,11 @@ public class DescisaoVIEW extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Vamos Começar?");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Pessoa Fisica");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +124,8 @@ public class DescisaoVIEW extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Pessoa Juridica");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,18 +197,21 @@ public class DescisaoVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // Instanciando o Jframe TelaPessoaJuridicaVIEW
         TelaPessoaJuridicaVIEW telaJuridica =  new TelaPessoaJuridicaVIEW();
         telaJuridica.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // Instanciando o Jframe TelaLoginVIEW
         TelaLoginVIEW telaLogin =  new TelaLoginVIEW();
         telaLogin.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         // Instanciando o Jframe TelaPessoaFisicaVIEW
         TelaPessoaFisicaVIEW telaFisica = new TelaPessoaFisicaVIEW();
         telaFisica.setVisible(true);
         dispose();
