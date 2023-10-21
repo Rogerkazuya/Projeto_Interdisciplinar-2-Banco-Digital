@@ -1,8 +1,8 @@
 package VIEW;
-import DAO.ClienteJuridicaDAO;
-import DAO.ClienteFisicaDAO;
-import DTO.ClienteFisicaDTO;
-import DTO.ClienteJuridicaDTO;
+import DAO.PessoaFisicaDAO;
+import DAO.PessoaJuridicaDAO;
+import DTO.PessoaFisicaDTO;
+import DTO.PessoaJuridicaDTO;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;import javax.swing.JCheckBox;
@@ -26,44 +26,63 @@ public class TelaLoginVIEW extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         txtCampoTexto = new javax.swing.JTextField();
-        mostrarSenha = new javax.swing.JCheckBox();
-        botaoAcessar = new javax.swing.JButton();
-        botaoCriarConta = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         txtCampoSenha = new javax.swing.JPasswordField();
+        botaoAcessar = new javax.swing.JButton();
+        mostrarSenha = new javax.swing.JCheckBox();
+        botaoCriarConta = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(100, 50, 150));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
+
+        jButton2.setText("jButton2");
+        jButton2.setMaximumSize(new java.awt.Dimension(0, 0));
+        jButton2.setMinimumSize(new java.awt.Dimension(0, 0));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Acesse sua conta");
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CPF/CPNJ:");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("SENHA:");
-
+        txtCampoTexto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCampoTexto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCampoTextoActionPerformed(evt);
             }
         });
 
-        mostrarSenha.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        mostrarSenha.setText("Mostrar a Senha");
-        mostrarSenha.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("SENHA:");
+
+        txtCampoSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCampoSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mostrarSenhaActionPerformed(evt);
+                txtCampoSenhaActionPerformed(evt);
             }
         });
 
         botaoAcessar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        botaoAcessar.setForeground(new java.awt.Color(0, 0, 0));
         botaoAcessar.setText("Acessar");
         botaoAcessar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,7 +90,18 @@ public class TelaLoginVIEW extends javax.swing.JFrame {
             }
         });
 
+        mostrarSenha.setBackground(new java.awt.Color(153, 153, 153));
+        mostrarSenha.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        mostrarSenha.setForeground(new java.awt.Color(0, 0, 0));
+        mostrarSenha.setText("Mostrar a Senha");
+        mostrarSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mostrarSenhaActionPerformed(evt);
+            }
+        });
+
         botaoCriarConta.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        botaoCriarConta.setForeground(new java.awt.Color(0, 0, 0));
         botaoCriarConta.setText("Criar Conta");
         botaoCriarConta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,177 +109,97 @@ public class TelaLoginVIEW extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(240, 240, 240));
-
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("X");
+        jButton1.setFocusPainted(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Dollar_money_logo_template__1_-removebg-preview.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(0, 66, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(51, 51, 51)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(mostrarSenha)
+                                            .addComponent(jLabel1)
+                                            .addComponent(txtCampoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(botaoAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel2)
+                                            .addComponent(txtCampoTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(89, 89, 89)
+                                        .addComponent(botaoCriarConta, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(54, 54, 54)))
+                        .addGap(91, 91, 91))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1))
-            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jButton1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        txtCampoSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCampoSenhaActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(txtCampoTexto)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(botaoCriarConta))
-                    .addComponent(txtCampoSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(mostrarSenha)
-                            .addComponent(botaoAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addGap(16, 16, 16)
-                .addComponent(txtCampoTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(12, 12, 12)
-                .addComponent(txtCampoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtCampoTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtCampoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(mostrarSenha)
-                .addGap(24, 24, 24)
+                .addGap(28, 28, 28)
                 .addComponent(botaoAcessar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoCriarConta)
-                .addContainerGap(34, Short.MAX_VALUE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 470, 470));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCampoTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCampoTextoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCampoTextoActionPerformed
-    private void gravaInfo(){
-        ClienteFisicaDTO objClinteFisico = new ClienteFisicaDTO();
-        ClienteJuridicaDTO objClintejuridica = new ClienteJuridicaDTO();
-        String txtCampo = txtCampoTexto.getText();
-        objClinteFisico.setCpf_usuario(txtCampo);
-        objClintejuridica.setCnpj(txtCampo);
-    
-    }
-    private void mostrarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarSenhaActionPerformed
-        if (mostrarSenha.isSelected()){
-            txtCampoSenha.setEchoChar((char)0); // Exibe a Senha
-        } else {
-            txtCampoSenha.setEchoChar('*'); // Oculta a senha com asteriscos
-        }
-    }//GEN-LAST:event_mostrarSenhaActionPerformed
-
-    private void botaoAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAcessarActionPerformed
-        try{
-            String cpf_usuario, senha_usuario;
-            String cnpj, senha;
-        
-        cpf_usuario = txtCampoTexto.getText();
-        senha_usuario = txtCampoSenha.getText();
-        cnpj = txtCampoTexto.getText();
-        senha = txtCampoSenha.getText();
-        
-        
-        
-        
-        
-        
-        ClienteFisicaDTO cliente = new ClienteFisicaDTO();
-        cliente.setCpf_usuario(cpf_usuario);
-        cliente.setSenha_usuario(senha_usuario);
-        
-        ClienteFisicaDAO clientedao =  new ClienteFisicaDAO();
-        ResultSet rsclientedao =  clientedao.autenticacaoUsuario(cliente);
-        
-        ClienteJuridicaDTO clientedto = new ClienteJuridicaDTO();
-        clientedto.setCnpj(cnpj);
-        clientedto.setSenha(senha);
-        
-        ClienteJuridicaDAO clientejdao =  new ClienteJuridicaDAO();
-        ResultSet rsclientejdao =  clientejdao.autenticacaoJuridica(clientedto);
-        
-       
-        if (rsclientedao.next() || rsclientejdao.next()){
-            TelaPrincipalVIEW telaPrincipal = new TelaPrincipalVIEW();
-            telaPrincipal.setVisible(true);
-            dispose();
-        }
-        
-        else{
-            // enviar mensagem dizendo incorreto.
-            JOptionPane.showMessageDialog(null, "Cpf e Senha incorreto!");
-        }
-        }catch (SQLException e){
-            JOptionPane.showMessageDialog(null, "TelaLoginVIEW" + e);
-        }
-    }//GEN-LAST:event_botaoAcessarActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void txtCampoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCampoSenhaActionPerformed
-       
-    }//GEN-LAST:event_txtCampoSenhaActionPerformed
 
     private void botaoCriarContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCriarContaActionPerformed
         DescisaoVIEW ds = new DescisaoVIEW();
@@ -257,6 +207,113 @@ public class TelaLoginVIEW extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_botaoCriarContaActionPerformed
 
+    private void botaoAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAcessarActionPerformed
+        try{
+            String cpf, Senha;
+            String cnpj, senha;
+            /*
+            Recebe os valores digitados nos campos de texto
+            para Cpf e Senha da Pessoa Fisica, Cnpj e Senha
+            da Pessoa Juridica
+            */
+            cpf = txtCampoTexto.getText();
+            Senha = txtCampoSenha.getText();
+            cnpj = txtCampoTexto.getText();
+            senha = txtCampoSenha.getText();
+
+            // Instanciando a classe PessoaFisicaDTO
+            PessoaFisicaDTO cfdto = new PessoaFisicaDTO();
+            /* O valor que está na váriavel cpf o sistema
+            irá comparar com o que está no banco de dados,
+            tanto o Cpf tanto a Senha
+            */
+            cfdto.setCpf(cpf);
+            cfdto.setSenha(Senha);
+
+            // Instanciando a classe PessoaFisicaDAO
+            PessoaFisicaDAO cfdao =  new PessoaFisicaDAO();
+
+            /* Usando o ResultSet assim ele consegue fazer a autenticação,
+            e assim verificando se o cpf e a senha informados são os
+            mesmo do banco de dados na tabela pessoa fisica
+            */
+            ResultSet rscfdao = cfdao.autenticacaoUsuario(cfdto);
+
+            // Instanciando a classe PessoaJuridicaDTO
+            PessoaJuridicaDTO cjdto = new PessoaJuridicaDTO();
+            /*
+            O valor que está na váriavel cnpj, o sistema irá
+            comparar com o que está no banco de dados, tanto
+            o Cnpj tando a Senha
+            */
+            cjdto.setCnpj(cnpj);
+            cjdto.setSenha(senha);
+
+            // Instanciando a classe PessoaJuridicaDAO
+            PessoaJuridicaDAO cjdao = new PessoaJuridicaDAO();
+
+            /* Usando o ResultSet assim ele consegue fazer a autenticação,
+            e assim verificando se o cnpj e a senha informados são os
+            mesmo do banco de dados na tabela pessoa juridica
+            */
+            ResultSet rscjdao =  cjdao.autenticacaoJuridica(cjdto);
+
+            /*
+            Verifica se a autenticação foi bem-sucedida para pessoa
+            fisica ou juridica
+            */
+            if (rscfdao.next() || rscjdao.next()){
+                TelaPrincipalVIEW telaPrincipal = new TelaPrincipalVIEW();
+                telaPrincipal.setVisible(true);
+                dispose(); // fecha a tela login
+            }
+
+            /*
+            Cai aqui caso o cpf/cpnj e senha forem informados errados ou
+            se caso não tiverem registrados
+            */
+            else{
+                // enviar mensagem dizendo incorreto.
+                JOptionPane.showMessageDialog(null, "Cpf e/ou Senha incorreto(s)!");
+            }
+
+            // Cai aqui se caso a conexão não for bem-sucedida
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null, "TelaLoginVIEW" + e);
+        }
+    }//GEN-LAST:event_botaoAcessarActionPerformed
+
+    private void mostrarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarSenhaActionPerformed
+
+        if (mostrarSenha.isSelected()){
+            /* se caso a caixa de seleção "mostrarSenha" estiver marcada
+            exibe a senha em texto no campo password
+            */
+            txtCampoSenha.setEchoChar((char)0); // Exibe a Senha
+        } else {
+            /*
+            // Caso contrário, oculta a senha com asteriscos
+            (o comportamento padrão)
+            */
+            txtCampoSenha.setEchoChar('*'); // Oculta a senha com asteriscos
+        }
+    }//GEN-LAST:event_mostrarSenhaActionPerformed
+
+    private void txtCampoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCampoSenhaActionPerformed
+
+    }//GEN-LAST:event_txtCampoSenhaActionPerformed
+
+    private void txtCampoTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCampoTextoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCampoTextoActionPerformed
+    private void gravaInfo(){
+        PessoaFisicaDTO objCfdto = new PessoaFisicaDTO();
+        PessoaJuridicaDTO objCjdto = new PessoaJuridicaDTO();
+        String txtCampo = txtCampoTexto.getText();
+        objCfdto.setCpf(txtCampo);
+        objCjdto.setCnpj(txtCampo);
+    
+    }
     /**
      * @param args the command line arguments
      */
@@ -268,7 +325,7 @@ public class TelaLoginVIEW extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windowns".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -296,11 +353,12 @@ public class TelaLoginVIEW extends javax.swing.JFrame {
     private javax.swing.JButton botaoAcessar;
     private javax.swing.JButton botaoCriarConta;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JCheckBox mostrarSenha;
     private javax.swing.JPasswordField txtCampoSenha;
     private javax.swing.JTextField txtCampoTexto;

@@ -1,7 +1,7 @@
 package VIEW;
 
-import DAO.CadastrarFisicaDAO;
-import DTO.CadastrarFisicaDTO;
+import DAO.PessoaFisicaDAO;
+import DTO.PessoaFisicaDTO;
 import javax.swing.JOptionPane;
 import javax.swing.text.*;
 
@@ -154,23 +154,23 @@ public class TelaPessoaFisicaVIEW extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel10.setText("Crie sua Conta");
 
-        jPanel2.setBackground(new java.awt.Color(100, 50, 150));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("de volta!");
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Bem-vindo");
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Acesse sua conta agora mesmo.");
 
-        jButton2.setBackground(new java.awt.Color(100, 50, 150));
+        jButton2.setBackground(new java.awt.Color(153, 153, 153));
         jButton2.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(240, 240, 240));
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Entrar");
         jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.setBorderPainted(false);
@@ -181,7 +181,7 @@ public class TelaPessoaFisicaVIEW extends javax.swing.JFrame {
         });
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("Já tem Conta?");
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
@@ -366,6 +366,7 @@ public class TelaPessoaFisicaVIEW extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // Dando dispose para fechar a tela
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -398,8 +399,14 @@ public class TelaPessoaFisicaVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDataActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            String nome, sobrenome, endereco, numero, telefone, dataNascimento, cpf, senha;
+        // Declarando as variaveis com os mesmo nome das variavies da PessoaFisicaDTO
+        String nome, sobrenome, endereco, numero, telefone, dataNascimento, 
+                cpf, senha, cpf_titular, cpf_r;
         
+        /* 
+        As variaveis estão recebendo os dados que estão sendo informados
+        nos campos txt
+        */
         nome = txtNome.getText();
         sobrenome = txtSobrenome.getText();
         endereco = txtEndereco.getText();
@@ -407,9 +414,16 @@ public class TelaPessoaFisicaVIEW extends javax.swing.JFrame {
         telefone = txtTelefone.getText();
         dataNascimento = txtData.getText();
         cpf = txtCpf.getText();
+        cpf_titular = txtCpf.getText();
+        cpf_r = txtCpf.getText();
         senha = txtSenha.getText();
         
-        CadastrarFisicaDTO cadastrardto = new CadastrarFisicaDTO();
+        /*
+        Instanciando a classe PessoaFisicaDTO e criando um objeto,
+        e através desse objeto está inserindo através do set os dados
+        que foi armazenado nas variaves que estão entre (variavel)
+        */
+        PessoaFisicaDTO cadastrardto = new PessoaFisicaDTO();
         cadastrardto.setNome(nome);
         cadastrardto.setSobrenome(sobrenome);
         cadastrardto.setEndereco(endereco);
@@ -417,26 +431,42 @@ public class TelaPessoaFisicaVIEW extends javax.swing.JFrame {
         cadastrardto.setTelefone(telefone);
         cadastrardto.setDatanascimento(dataNascimento);
         cadastrardto.setCpf(cpf);
+        cadastrardto.setCpf_titular(cpf_titular);
+        cadastrardto.setCpf_r(cpf_r);
         cadastrardto.setSenha(senha);
         
-        CadastrarFisicaDAO objcadastrarFisica = new CadastrarFisicaDAO();
-        objcadastrarFisica.cadastrarFisica(cadastrardto);
+        /*
+        Instanciando a classe PessoaFisicaDAO e com o objeto criado,
+        irá puxar os metódos necessario para a execução do programa
+        */
+        PessoaFisicaDAO objcadastrarFisica = new PessoaFisicaDAO();
+        objcadastrarFisica.cadastrarFisicaConta(cadastrardto);
         
-       TelaLoginVIEW telaLogin = new TelaLoginVIEW();
-       JOptionPane.showMessageDialog(null, "Cadastro Efetuado Com Sucesso!! ");
-       JOptionPane.showMessageDialog(null, "Seja Bem Vindo ao Nosso Banco!!  ");
-       telaLogin.setVisible(true);
-       dispose();
- {
+        
+       
             
-        }
+              JOptionPane.showMessageDialog(null, "Cadastro Efetuado Com Sucesso!! ");
+              JOptionPane.showMessageDialog(null, "Seja Bem Vindo ao Nosso Banco!!  ");
+              /*
+              Instanciando o Jframe telaLogin, pois se caso o cadastro for efetuado,
+              aparecerá uma mensagem pelo JOptionPane e assim indo pra telaLogin
+              */
+              TelaLoginVIEW telaLogin = new TelaLoginVIEW();
+              telaLogin.setVisible(true);
+                dispose();
+              
         
         
+      
+      
+      
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // Instanciando o jFrame da telaLoginVIEW
         TelaLoginVIEW telaLogin = new TelaLoginVIEW();
         telaLogin.setVisible(true);
+        // Dando dispose para fechar a tela
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -445,8 +475,10 @@ public class TelaPessoaFisicaVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNumeroActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // Instanciando o jFrame da DecisaoVIEW
         DescisaoVIEW ds =  new DescisaoVIEW();
         ds.setVisible(true);
+        // Dando dispose para fechar a tela
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 

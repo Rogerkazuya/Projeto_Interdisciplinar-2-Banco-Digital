@@ -1,8 +1,8 @@
 package VIEW;
 
 
-import DAO.CadastrarJuridicaDAO;
-import DTO.CadastrarJuridicaDTO;
+import DAO.PessoaJuridicaDAO;
+import DTO.PessoaJuridicaDTO;
 import javax.swing.JOptionPane;
 import javax.swing.text.*;
 
@@ -350,7 +350,7 @@ public class TelaPessoaJuridicaVIEW extends javax.swing.JFrame {
         cnpj= txtCnpj.getText();
         senha = txtSenha.getText();
 
-        CadastrarJuridicaDTO cadastrardto = new CadastrarJuridicaDTO();
+        PessoaJuridicaDTO cadastrardto = new PessoaJuridicaDTO();
         cadastrardto.setNomeEmpresa(nomeEmpresa);
         cadastrardto.setNomeFantasia(nomeFantasia);
         cadastrardto.setEndereco(endereco);
@@ -361,7 +361,7 @@ public class TelaPessoaJuridicaVIEW extends javax.swing.JFrame {
         
         
 
-        CadastrarJuridicaDAO cadastrarJuridica = new CadastrarJuridicaDAO();
+        PessoaJuridicaDAO cadastrarJuridica = new PessoaJuridicaDAO();
         cadastrarJuridica.CadastrarJuridica(cadastrardto);
 
         TelaLoginVIEW telaLogin = new TelaLoginVIEW();

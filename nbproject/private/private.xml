@@ -3,18 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/thiag/OneDrive/Documentos/Interface/TelaLoginDAO/src/DTO/CadastrarFisicaDTO.java</file>
-            <file>file:/C:/Users/thiag/OneDrive/Documentos/Interface/TelaLoginDAO/src/VIEW/PerfilVIEW.java</file>
-            <file>file:/C:/Users/thiag/OneDrive/Documentos/Interface/TelaLoginDAO/src/DAO/PerfilDAO.java</file>
-            <file>file:/C:/Users/thiag/OneDrive/Documentos/Interface/TelaLoginDAO/src/DTO/ClienteFisicaDTO.java</file>
+            <file>file:/C:/Users/thiag/OneDrive/Documentos/Interface/TelaLoginDAO/src/DAO/PessoaFisicaDAO.java</file>
+            <file>file:/C:/Users/thiag/OneDrive/Documentos/Interface/TelaLoginDAO/src/VIEW/TransferenciaVIEW.java</file>
             <file>file:/C:/Users/thiag/OneDrive/Documentos/Interface/TelaLoginDAO/src/VIEW/TelaPrincipalVIEW.java</file>
-            <file>file:/C:/Users/thiag/OneDrive/Documentos/Interface/TelaLoginDAO/src/DAO/CadastrarJuridicaDAO.java</file>
-            <file>file:/C:/Users/thiag/OneDrive/Documentos/Interface/TelaLoginDAO/src/DTO/PerfilDTO.java</file>
-            <file>file:/C:/Users/thiag/OneDrive/Documentos/Interface/TelaLoginDAO/src/VIEW/TelaLoginVIEW.java</file>
-            <file>file:/C:/Users/thiag/OneDrive/Documentos/Interface/TelaLoginDAO/src/DTO/ClienteJuridicaDTO.java</file>
-            <file>file:/C:/Users/thiag/OneDrive/Documentos/Interface/TelaLoginDAO/src/VIEW/PerfilVIEWJuridica.java</file>
-            <file>file:/C:/Users/thiag/OneDrive/Documentos/Interface/TelaLoginDAO/src/DAO/CadastrarFisicaDAO.java</file>
-            <file>file:/C:/Users/thiag/OneDrive/Documentos/Interface/TelaLoginDAO/src/VIEW/TelaPessoaFisicaVIEW.java</file>
+            <file>file:/C:/Users/thiag/OneDrive/Documentos/Interface/TelaLoginDAO/src/DTO/PessoaFisicaDTO.java</file>
         </group>
     </open-files>
 </project-private>
